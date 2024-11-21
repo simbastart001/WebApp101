@@ -12,6 +12,30 @@
         @csrf
         <button>Logout</button>
     </form>
+
+    {{-- Create Post Section --}}
+    <div style="border: 3px solid black;">
+        <form action="/create-post" method="POST">
+            @csrf
+            <h2>CREATE POST</h2>
+            <input name = "title" type="text" placeholder="Post Title">
+            <textarea name = "body" type="text" placeholder="Body content..."></textarea> 
+            <button>Create Post</button>
+        </form>
+    </div>
+
+    {{-- Display currentLoggedinUser Posts --}}
+    <div style="border: 3px solid black;">
+        <h2>ALL POSTS</h2>
+        @foreach ($posts as $post)
+        <div style="background-color:honeydew; padding: 10px; margin: 10px;">
+            <h3>{{$post['title']}}</h3>
+            {{$post['body']}}
+        </div>
+        @endforeach
+    </div>
+
+
     @else
     <div style="border: 3px solid black;">
         <h2>REGISTER</h2>
