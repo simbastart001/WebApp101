@@ -28,3 +28,11 @@ Route::post('/login', [UserController::class, 'login']);
 
 // Blog Post related routes
 Route::post('/create-post', [PostController::class, 'createPost']);
+Route::get('/edit-post/{post}', [PostController::class, 'showEditScreen']);
+Route::put('/edit-post/{post}', [PostController::class, 'updatePost']);
+
+// 2FA
+// Route::get('/verify-2fa', [UserController::class, 'show2FAForm']);
+// Route::post('/verify-2fa', [UserController::class, 'verify2FA']);
+
+
