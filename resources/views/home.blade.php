@@ -78,20 +78,28 @@
         <input name="password" type="password" placeholder="Password">
         <button>Register</button>
     </form>
+</div>        
+
+<!-- Login Section -->
+<div>
+    <h2>Login</h2>
+
+    <!-- Display error popup if validation fails -->
+    @if ($errors->any())
+        <script type="text/javascript">
+            // Show the first error message in a popup
+            alert('Error: {{ $errors->first() }}');
+        </script>
+    @endif
+
+    <form action="/login" method="POST">
+        @csrf
+        <input name="loginname" type="text" placeholder="Name" value="{{ old('loginname') }}">
+        <input name="loginpassword" type="password" placeholder="Password">
+        <button type="submit">Login</button>
+    </form>
 </div>
 
-        
-
-        <!-- Login Section -->
-        <div>
-            <h2>Login</h2>
-            <form action="/login" method="POST">
-                @csrf
-                <input name="loginname" type="text" placeholder="Name">
-                <input name="loginpassword" type="password" placeholder="Password">
-                <button>Login</button>
-            </form>
-        </div>
     </div>
     @endauth
 </body>
