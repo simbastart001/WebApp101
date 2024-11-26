@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <header>Welcome to the VFOC website</header>
+    <header>Welcome to the VFOC Mini Site</header>
 
     @auth
     <div class="container">
@@ -19,6 +19,16 @@
             <form action="/logout" method="POST" style="margin: 0;">
                 @csrf
                 <button style="padding: 5px 10px; background-color: #FF0000; color: white; border: none; border-radius: 5px; cursor: pointer;">Logout</button>
+            </form>
+        </div>
+
+          {{-- Upload a new file --}}
+          <div>
+            <h4>UPLOAD FILE</h4>
+            <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <input type="file" name="file" accept=".xlsx, .xls, .csv">
+                <button type="submit">Import</button>
             </form>
         </div>
 
@@ -33,7 +43,7 @@
             </form>
         </div>
 
-        <!-- Display Current User's Posts -->
+        <!-- Display Current User's Log Requests -->
         <div>
             <h2>LOG REQUSTS</h2>
             @foreach ($posts as $post)
@@ -99,6 +109,7 @@
         <button type="submit">Login</button>
     </form>
 </div>
+
 
     </div>
     @endauth

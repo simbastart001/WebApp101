@@ -8,7 +8,7 @@ body {
 }
 
 header {
-    background-color: #4CAF50;
+    background-color: #0077B5; /* LinkedIn Blue */
     color: white;
     padding: 15px 0;
     text-align: center;
@@ -26,7 +26,7 @@ header {
 }
 
 h2 {
-    color: #4CAF50;
+    color: #0077B5; 
     font-size: 1.5rem;
     margin-bottom: 15px;
     text-align: center;
@@ -43,7 +43,7 @@ input, textarea {
 }
 
 button {
-    background-color: #4CAF50;
+    background-color: #0077B5;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -54,7 +54,7 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #005f8b; /* Darker shade for hover */
 }
 
 .auth-section, .post {
@@ -83,7 +83,7 @@ button:hover {
 }
 
 .post-actions a {
-    color: #4CAF50;
+    color: #0077B5; 
     text-decoration: none;
     font-weight: bold;
 }
